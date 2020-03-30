@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-//資料狀態
 const state = {
     todos: []
 };
@@ -9,7 +8,6 @@ const getters = {
     allTodos: state => state.todos
 };
 
-//
 const actions = {
     async fetchTodos({
         commit
@@ -42,7 +40,6 @@ const actions = {
     async filterTodos({
         commit
     }, e) {
-        // Get selected number
         const limit = parseInt(
             e.target.options[e.target.options.selectedIndex].innerText
         );
@@ -60,11 +57,13 @@ const actions = {
             `https://jsonplaceholder.typicode.com/todos/${updTodo.id}`,
             updTodo
         );
+
+        console.log(response.data);
+
         commit('updateTodo', response.data);
     }
 };
 
-//狀態
 const mutations = {
     setTodos: (state, todos) => (state.todos = todos),
     newTodo: (state, todo) => state.todos.unshift(todo),

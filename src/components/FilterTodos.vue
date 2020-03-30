@@ -1,9 +1,11 @@
 <template>
-    <div>
-        過濾待辦事項筆數：
-        <select @change="filterTodos($event)"
-                name=""
-                id="">
+    <div class="filter-num">
+        顯示筆數：
+        <select
+            @change="filterTodos($event)"
+            name=""
+            id=""
+        >
             <option value="200">200</option>
             <option value="100">100</option>
             <option value="50">50</option>
@@ -15,17 +17,15 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
-export default {
-    name:"FilterTodos",
-    methods:mapActions(["filterTodos"])
-}
+    import {
+        mapActions
+    } from 'vuex';
+
+    export default {
+        name: "FilterTodos",
+        methods: mapActions(["filterTodos"])
+    }
 </script>
 
 <style>
-    select{
-        margin-top: 30px;
-        padding: 6px;
-        border:3px solid greenyellow;
-    }
 </style>

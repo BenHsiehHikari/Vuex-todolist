@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background: #ffe09d;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.add-todo h3 {
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+  letter-spacing: 10px;
+}
+
+.add-todo .add form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-todo .input-todos {
+  width: 500px;
+  height: 40px;
+  font-size: 16px;
+  padding: 10px;
+  outline: 0;
+  border: 0;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+.add-todo .send-btn{
+  font-size: 16px;
+  background-color: rgb(249, 117, 1);
+  padding: 10px 15px;
+  outline: 0;
+  border: 0;
+  border-radius: 20px;
+}
+.todos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.todo {
+  background: #fcd704;
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  height: 300px;
+  border:1px solid #000;
+  box-sizing: border-box;
+}
+
+i {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.complete-box {
+  display: inline-block;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  background: #35495e;
+  border:1px solid #000;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+.complete-box + span{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.incomplete-box {
+  display: inline-block;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  background: #fcd704;
+  border:1px solid #000;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+.incomplete-box + span{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.is-complete {
+  background: #35495e;
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  .todos {
+    grid-template-columns: 1fr;
+  }
+}
